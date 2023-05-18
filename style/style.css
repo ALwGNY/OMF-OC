@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,500;1,900&family=Oswald:wght@300;700&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,500;1,900&family=Oswald:wght@300;700&family=Roboto:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,500;1,900&family=Oswald:wght@300;700&family=Roboto:wght@300;500&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,500;1,900&family=Oswald:wght@300;700&family=Roboto:wght@300;400;500&family=Shrikhand&display=swap");
 /***********************************************/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -54,14 +57,111 @@ table {
 /********************************************************************/
 /********************************************************************/
 /********************************************************************/
-header {
+.loader {
+  display: flex;
+  justify-content: center;
+  padding-top: 300px;
+  position: fixed;
+  background-color: #353535;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  animation: endloader 1.5s forwards;
+}
+.loader .lds-ellipsis {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 65px;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
-header img {
-  height: 44px;
+.loader .lds-ellipsis div {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.loader .lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.8s infinite;
+}
+.loader .lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.8s infinite;
+  background: #99E2D0;
+}
+.loader .lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis3 0.8s infinite;
+  background: #FF79DA;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+    background: #9356DC;
+  }
+  50% {
+    background: #9356DC;
+  }
+  100% {
+    transform: scale(1);
+    background: #99E2D0;
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    background: #FF79DA;
+  }
+  100% {
+    transform: translate(24px, 0);
+    background: #9356DC;
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    background: #99E2D0;
+  }
+  100% {
+    transform: translate(24px, 0);
+    background: #FF79DA;
+  }
+}
+
+@keyframes endloader {
+  from {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+    scale: 1;
+  }
+  99% {
+    opacity: 0;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0;
+  }
+}
+header h1 {
+  width: 100%;
+  display: inline-flex;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  font-family: "Shrikhand", cursive;
+  font-size: 30px;
 }
 
 .Localisation {
@@ -69,7 +169,6 @@ header img {
   font-size: 16px;
   font-weight: 500;
   background: #EAEAEA;
-  padding: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,10 +176,6 @@ header img {
 }
 .Localisation i {
   padding-right: 10px;
-}
-.Localisation p {
-  font-size: 16px;
-  font-weight: 700;
 }
 
 .reservation {
@@ -96,79 +191,103 @@ header img {
 .reservation p {
   font-size: 18px;
   font-weight: 300;
-  margin: 10px;
+  margin: 15px;
 }
 .reservation button {
   color: white;
   font-weight: 500;
   font-size: 16px;
   font-family: "Roboto", cursive;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(0, #9356DC 12.44%, #FF79DA 121.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   border-radius: 25px;
   padding: 17px 22px;
   border: none;
-  margin: 30px;
+  margin: 20px;
+  transition: all 200ms ease-in-out;
+}
+.reservation button:hover {
+  filter: brightness(1.2);
+  transform: scale(1.015);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4392156863);
 }
 
 .etapes {
   font-family: "Roboto", cursive;
   font-weight: 700;
   font-size: 24px;
-  margin: 15px;
+  margin: 45px 30px;
+}
+.etapes h2 {
+  max-width: 1115px;
+  margin: auto;
+  margin-bottom: 25px;
 }
 .etapes ol {
+  font-weight: 500;
   font-size: 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1115px;
   gap: 25px;
-  margin: 25px 0px;
+  margin: 25px 30px;
 }
 .etapes ol li {
-  margin: 0px 20px;
-  width: 80%;
+  width: 100%;
   background-color: #F6F6F6;
   border-radius: 20px;
   padding: 25px 0px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  max-width: 333px;
 }
 .etapes ol li i {
   margin-right: 10px;
+  color: #7E7E7E;
 }
 .etapes ol li span {
+  color: white;
   font-size: 14px;
   position: relative;
   right: 15px;
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: 50%;
   background-color: #9356dc;
-  color: white;
+}
+
+ol li:hover i {
+  color: #9356DC;
 }
 
 .mainrestaurant {
+  background-color: #F3F3F3;
   font-family: "Roboto", cursive;
 }
 .mainrestaurant h2 {
-  padding: 40px 20px;
+  padding: 50px 30px 0px;
   font-size: 24px;
   font-weight: 700;
+  max-width: 1115px;
+  margin: auto;
 }
 .mainrestaurant .restaurants {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 25px;
+  max-width: 1115px;
+  margin: auto;
 }
 .mainrestaurant article {
   flex: 1 1 0;
   background-color: white;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+  margin: 10px;
+  width: 100%;
   min-width: 340px;
-  margin: 50px;
   border-radius: 15px;
   position: relative;
+  max-width: 500px;
 }
 .mainrestaurant article a {
   display: flex;
@@ -177,7 +296,7 @@ header img {
   color: inherit;
 }
 .mainrestaurant article a img {
-  height: 200px;
+  max-height: 160px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -188,9 +307,9 @@ header img {
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 65px;
   font-weight: 500;
-  padding: 5px;
+  font-size: 14px;
+  padding: 7px 10px;
   background-color: #99E2D0;
   color: #008766;
   border-radius: 2px;
@@ -203,24 +322,49 @@ header img {
 }
 .mainrestaurant article .nomrestaurant {
   padding: 10px;
+  line-height: 25px;
 }
 .mainrestaurant article .nomrestaurant h3 {
   font-weight: 700;
 }
+.mainrestaurant .nomrestaurant p {
+  font-weight: 300;
+}
 .mainrestaurant .fa-heart {
+  font-size: 20px;
   position: absolute;
   right: 30px;
-  bottom: 20px;
+  bottom: 25px;
 }
 .mainrestaurant .fa-heart:hover {
-  background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  animation: heart 500ms ease forwards;
   background-clip: text;
   -webkit-background-clip: text;
-  font-weight: bold;
-  color: transparent;
 }
 
-.footer {
+@keyframes heart {
+  0% {
+    opacity: 0;
+    color: white;
+  }
+  25% {
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-weight: bold;
+    opacity: 0, 2;
+  }
+  75% {
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-weight: bold;
+    opacity: 0.5;
+  }
+  100% {
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-weight: bold;
+    opacity: 1;
+    color: transparent;
+  }
+}
+footer {
   display: flex;
   flex-direction: column;
   background: #353535;
@@ -229,16 +373,53 @@ header img {
   font-weight: 500;
   padding: 25px;
   line-height: 25px;
+  font-size: 16px;
 }
-.footer h4 {
+footer h4 {
   font-family: "Shrikhand", cursive;
-  font-size: 25px;
+  font-size: 18px;
   padding: 15px 0px;
 }
+footer li i {
+  padding-right: 3px;
+}
+footer .fa-utensils {
+  padding-right: 9px;
+}
+footer .fontweight {
+  font-weight: 400;
+}
+footer .contact {
+  text-decoration: none;
+  color: white;
+}
 
-@media (max-width: 767px) {
+@media (min-width: 1024px) {
   .etapes ol {
+    flex-direction: row;
+    gap: 40px;
+    margin: auto;
+  }
+  .restaurants {
+    gap: 30px 90px;
+  }
+  .restaurants article {
+    min-width: 400px;
+  }
+  footer .row {
+    height: 60px;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    gap: 25px;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  footer h4 {
+    padding: 0px 40px;
   }
 }/*# sourceMappingURL=style.css.map */
