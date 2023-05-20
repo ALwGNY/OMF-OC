@@ -106,9 +106,9 @@ main {
 }
 .sectionmenu .row {
   margin: auto;
-  max-width: 375px;
+  max-width: 450px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .sectionmenu .fa-heart {
   margin-right: 40px;
@@ -296,4 +296,4 @@ footer .contact {
   footer h4 {
     padding: 0px 40px;
   }
-}/*# sourceMappingURL=restaurant1.css.map */
+}/*# sourceMappingURL=restaurant.css.map */
