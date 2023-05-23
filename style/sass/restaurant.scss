@@ -219,7 +219,7 @@ main {
 		.items {
 			display: flex;
 			margin-left: auto;
-			transform: translateX(60px) ;
+			margin-right: -60px;
 			transition: all 0.5s;		
 		}
 
@@ -252,7 +252,7 @@ main {
 .menu {
 	.box:hover {
 		.items {
-			transform: translateX(0px);	
+			margin-right: 0px;
 		}
 		
 	}
@@ -316,7 +316,7 @@ footer {
 
 @media (min-width: 1024px)  { 	
 
-	footer .row {
+	footer {
 		height: 60px;
 		display: flex;		
 		justify-content: flex-start;

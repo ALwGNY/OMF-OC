@@ -335,13 +335,41 @@ ol li:hover i {
   position: absolute;
   right: 30px;
   bottom: 25px;
+  -webkit-background-clip: text;
+          background-clip: text;
+  animation: heartreverse 500ms ease-in-out;
 }
 .mainrestaurant .fa-heart:hover {
-  animation: heart 500ms ease forwards;
+  animation: heart 500ms ease-in-out forwards;
   background-clip: text;
   -webkit-background-clip: text;
 }
 
+@keyframes heartreverse {
+  0% {
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-weight: bold;
+    opacity: 1;
+    color: transparent;
+  }
+  25% {
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-weight: bold;
+    opacity: 0, 2;
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-weight: bold;
+    opacity: 0.5;
+  }
+  75% {
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-weight: bold;
+    opacity: 0, 2;
+  }
+  100% {
+    opacity: 0;
+    color: white;
+  }
+}
 @keyframes heart {
   0% {
     opacity: 0;
@@ -406,7 +434,7 @@ footer .contact {
   .restaurants article {
     min-width: 400px;
   }
-  footer .row {
+  footer {
     height: 60px;
     display: flex;
     justify-content: flex-start;
