@@ -142,15 +142,12 @@ table {
   }
   75% {
     opacity: 1;
-    scale: 1;
   }
   99% {
     opacity: 0;
-    scale: 1;
   }
   to {
     opacity: 0;
-    scale: 0;
   }
 }
 header h1 {
@@ -184,7 +181,7 @@ header h1 {
   padding: 30px 10px;
   text-align: center;
 }
-.reservation h1 {
+.reservation h2 {
   font-size: 24px;
   font-weight: 700;
 }

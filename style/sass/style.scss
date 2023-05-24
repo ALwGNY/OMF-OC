@@ -156,16 +156,13 @@ $background-color_2: #9356dc;
 		opacity: 1;	
 	}
 	75% {
-		opacity: 1;
-		scale: 1;
+		opacity: 1;	
 	}
 	99%{
 		opacity: 0;
-		scale: 1;
 	}	
 	to {
 		opacity: 0;
-		scale: 0;
 	}
 }
 
@@ -201,7 +198,7 @@ header {
 	background: #F3F3F3;
 	padding: 30px 10px;
 	text-align: center;
-	h1 {
+	h2 {
 		font-size: 24px;
 		font-weight: 700;
 	}
