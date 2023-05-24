@@ -129,12 +129,39 @@ main {
 		margin-right: 40px;
 		display: flex;
 		align-items: flex-end;
+		animation: heartreverse 500ms ease-in-out;
+		background-clip: text;
 			
 	}
 	.fa-heart:hover {
 		background-clip: text;
 		-webkit-background-clip: text;
-		animation: heart 300ms ease forwards;
+		animation: heart 500ms ease forwards;
+	}
+}
+@keyframes heartreverse {
+	0% {
+		background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+		font-weight: bold;
+		opacity: 1;
+		color: transparent;	
+	}
+	25%{
+		background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+		font-weight: bold;
+		opacity: 0,2;
+		background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+		font-weight: bold;
+		opacity: 0.5;
+	}
+	75%{
+		background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+		font-weight: bold;
+		opacity: 0,2;
+	}
+	100%{
+		opacity: 0;
+		color: white;
 	}
 }
 
