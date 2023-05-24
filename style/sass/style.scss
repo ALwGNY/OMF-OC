@@ -156,13 +156,14 @@ $background-color_2: #9356dc;
 		opacity: 1;	
 	}
 	75% {
-		opacity: 1;	
+		opacity: 1;
 	}
 	99%{
 		opacity: 0;
+		display: none;
 	}	
 	to {
-		opacity: 0;
+		opacity: 0;	
 	}
 }
 
